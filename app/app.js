@@ -34,21 +34,15 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider){
 // Factory
 
 app.factory('Upload', ['$http', function ($http) {
-	var URL = 'http://odaapp.co/api/v1/';
+	var URL = '../Angular-PHP-Imgur-Upload/API/index.php';
 	return {
-		image : function(id, idPath, colPath, table, file, cb){
+		image : function(file, cb){
 
 				var data = new FormData();
-				var method = "uploadGeneralImage";
-				
-			
-
+				var method = "uploadImage";
 				data.append("method", method);
-				data.append("id", id);
-				data.append("idPath", idPath);
-				data.append("colPath", colPath);
 				data.append("file",file);
-				data.append("table",table);
+
 				
 
 				var xhr = new XMLHttpRequest();

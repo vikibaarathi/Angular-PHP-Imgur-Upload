@@ -5,4 +5,27 @@
 			<h4>By Vigneswara Baarathi</h4>
 		</div>
 	</div>
+	
+	<div class="row">
+		<div class="col-md-3">
+			
+			<!-- ****************************THE IMPORTANT STUFF **************************!-->
+			<label for="vendorLogo" tooltips title="upload thumbnail" tooltip-side="bottom">
+				<img ng-src="{{form.thumbImg}}"  class="img-responsive img-rounded" >
+			
+			</label>
+			<input id="vendorLogo" ng-show="showDiv" onchange="angular.element(this).scope().loadImage(this)" type="file" accept="image/*">
+			<!-- ****************************THE IMPORTANT STUFF ENDS **************************!-->
+		</div>
+		<div class="col-md-9">
+			<strong><p>Profile Image. {{loadStatus}}</p></strong>
+			<p>Upload a profile image of your business.<br>Your logo is recommended as it helps customers quickly recognise your business.</p>
+			<p>Recommended size is 300 x 300 pixels.</p>
+			<h4 ng-show="showLoading">Loading</h4>
+			<h4 ng-show="showDone">Uploaded</h4>
+			
+			<p>{{finalUrl}}</p>
+			
+		</div>
+	</div>
 </div>
